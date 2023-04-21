@@ -85,6 +85,8 @@ export default {
     components:{
         Cast,
         Images
-    }
+    },
+
+    
 };
 </script>
