@@ -3,7 +3,6 @@
 <p><input  class=" text-black mt-3" type="email" placeholder="Email" v-model="email"/></p>
 <p><input class=" text-black mt-3" type="password" placeholder="Password" v-model="password"/></p>
 <p><button class="bg-red-700 rounded text-black mt-3 ml-2 p-2" @click="register">Submit</button></p>
-<p><button class="bg-blue-700 rounded text-white mt-3 ml-2 p-2" @click="signInWithGoogle">Sign In With Google</button></p>
 </template>
 
 <script setup>
@@ -25,9 +24,5 @@ const register = () => {
         alert(error.message);
     });
 };
-const signInWithGoogle = () => {
-
-};
-
 
 </script>
