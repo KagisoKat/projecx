@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import Movie from '../components/movies/Movie.vue'
 import Likes from '../views/Likes.vue'
+import SearchBar from '../components/header/SearchBar.vue'
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 
 const router = createRouter({
@@ -27,6 +28,14 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: Likes,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/searchbar',
+      name: 'searchbar',
+      component: SearchBar,
       meta: {
         requiresAuth: true
       }

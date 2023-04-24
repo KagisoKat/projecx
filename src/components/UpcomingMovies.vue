@@ -1,10 +1,11 @@
 <template>
-  <div class="mt-10 text-xl font-bold ">
+  <div class="mt-10 text-xl font-bold">
     UPCOMING MOVIES
-    <Carousel class="bg-dark text-white" v-bind="settings" :breakpoints="breakpoints">
-      <Slide  :index="i" :key="i" v-for="(movie, i) in this.upcomingMovies">
+    <Carousel
+    >
+      <Slide :index="i" :key="i" v-for="(movie, i) in this.upcomingMovies">
         <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" />
-        <div class="carousel__item">{{  movie.title  }}</div>
+        <div class="carousel__item bg-transparent">{{ movie.title }}</div>
       </Slide>
 
       <template #addons>
@@ -15,12 +16,10 @@
 </template>
 
 <script>
-
 import { defineComponent } from "vue";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 
 import "vue3-carousel/dist/carousel.css";
-
 export default defineComponent({
   name: "Breakpoints",
   components: {
@@ -28,13 +27,13 @@ export default defineComponent({
     Slide,
     Navigation,
   },
- 
+
   data() {
     return {
       upcomingMovies: [],
     };
   },
- 
+
   mounted() {
     this.fetchUpcomingMovies();
   },
@@ -47,27 +46,30 @@ export default defineComponent({
       console.log(this.upcomingMovies);
     },
   },
-   // carousel settings
-   settings: {
-      itemsToShow: 1,
-      snapAlign: "start",
-      
-    },
-    // breakpoints are mobile first
-    // any settings not specified will fallback to the carousel settings
-    breakpoints: {
-      // 700px and up
-      700: {
-        itemsToShow: 3.5,
-        snapAlign: "start",
-      },
-      // 1024 and up
-      1024: {
-        itemsToShow: 5,
-        snapAlign: "start",
-      },
-    },
-
-})
-</script>
   
+ 
+});
+</script>
+<style scoped>
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  background: var(--vc-nav-background);
+  border-radius: var(--vc-nav-border-radius);
+  width: var(--vc-nav-width);
+  height: var(--vc-nav-height);
+  text-align: center;
+  font-size: var(--vc-nav-height);
+  padding: 0;
+  color: var(--vc-nav-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 0;
+  cursor: pointer;
+  margin: 0 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+</style>

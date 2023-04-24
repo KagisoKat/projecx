@@ -1,5 +1,5 @@
 <template>
-    <div class="ml-3">
+    <div class="ml-3 mt-3">
   <h1>Create an Account</h1>
   <p>
     <input

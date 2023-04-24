@@ -18,18 +18,15 @@
         </li>
       </ul>
     </div>
-    <AccountDropDown />
   </div>
 </template>
 
 
-<script>
-import AccountDropDown from "./AccountDropDown.vue";
-export default {
-  components: {
-    AccountDropDown,
-  },
 
+<script>
+
+export default {
+ 
   data() {
     return {
       searchResult: [],
@@ -63,3 +60,5 @@ export default {
   },
 };
 </script>
+
+
