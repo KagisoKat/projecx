@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10 text-xl font-bold ">
     UPCOMING MOVIES
-    <Carousel class="bg-red-700 text-white" v-bind="settings" :breakpoints="breakpoints">
+    <Carousel class="bg-dark text-white" v-bind="settings" :breakpoints="breakpoints">
       <Slide  :index="i" :key="i" v-for="(movie, i) in this.upcomingMovies">
         <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" />
         <div class="carousel__item">{{  movie.title  }}</div>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { isGloballyWhitelisted } from "@vue/shared";
+
 import { defineComponent } from "vue";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 

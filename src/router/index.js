@@ -21,7 +21,12 @@ const router = createRouter({
       name: 'profile',
       component: Likes
     },
-    
+    {
+      path: "/register", component: () => import("../views/Register.vue")
+    },
+    {
+      path: "/sign-in", component: () => import("../views/SignIn.vue")
+    }
   ]
 })
 

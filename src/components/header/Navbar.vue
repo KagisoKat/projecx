@@ -20,6 +20,16 @@
             Profile
         </router-link>
     </li>
+    <li>
+        <router-link to="/sign-in" class="ml-5">
+            SignIn
+        </router-link>
+        </li>
+        <li>
+        <router-link to="/register" class="ml-5">
+          Register
+        </router-link>
+        </li>
 </ul>
 
 
