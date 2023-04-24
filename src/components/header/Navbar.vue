@@ -11,12 +11,12 @@
         </router-link>
         </li>
         <li>
-        <router-link to="actors" class="ml-5">
+        <!-- <router-link to="actors" class="ml-5">
             Actors
-        </router-link>
+        </router-link> -->
     </li>
     <li>
-        <router-link to="/profile" class="ml-5">
+        <router-link to="/profile" class="ml-5"  v-if=" isUserLoggedI = true">
             Profile
         </router-link>
     </li>
