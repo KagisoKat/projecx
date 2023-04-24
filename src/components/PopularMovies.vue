@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-2">
     <h1 class="mt-5 text-xl font-bold">POPULAR MOVIES</h1>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4">

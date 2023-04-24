@@ -1,7 +1,7 @@
 <template>
-  <div class="flex">
+  <div class="flex ml-3 ">
 
-    <div class="flex container mx-auto mt-20">
+    <div class="flex container mx-auto mt-20 ">
       <img
         :src="posterPath"
         style="height: 350px"
