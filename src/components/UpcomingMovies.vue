@@ -5,7 +5,10 @@
     >
       <Slide :index="i" :key="i" v-for="(movie, i) in this.upcomingMovies">
         <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" />
-        <div class="carousel__item bg-transparent">{{ movie.title }}</div>
+        <div class="carousel__item ">
+          {{ movie.title }}
+        </div>
+
       </Slide>
 
       <template #addons>

@@ -32,14 +32,7 @@ const router = createRouter({
         requiresAuth: true
       }
     },
-    {
-      path: '/searchbar',
-      name: 'searchbar',
-      component: SearchBar,
-      meta: {
-        requiresAuth: true
-      }
-    },
+    
     {
       path: "/register", component: () => import("../views/Register.vue")
     },
