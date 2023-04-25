@@ -1,29 +1,26 @@
-# projecx
+# Netflix clone project
 
-This template should help get you started developing with Vue 3 in Vite.
+ This app allows users to register and sign in to view all the content.
+ Without doing so, users will not be able to view any movies or a profile.
 
-## Recommended IDE Setup
+##
+ 
+Once logged in, users are able to view upcoming movies displayed on a carousel,
+view available movies and utilise the search button.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 
 
-## Customize configuration
+Clicking on a specific movie allows the user to view more details about the movie .
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+##
+Users are also able to click on the 'favourite' button which then adds their selected movie to the 'profile'
+link on the navbar. The movies remain displayed even after the user logs out.Users also have the option to remove a movie from their 'profile'.
 
-## Project Setup
+##
+Users are able to sign out of the app.
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
 
-### Compile and Minify for Production
 
-```sh
-npm run build
 ```
