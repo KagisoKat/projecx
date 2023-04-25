@@ -7,7 +7,7 @@
         style="height: 350px"
         class="hover:opacity-75"
       />
-      <div class="ml-24">
+      <div class="ml-24 ">
         <h1 class="text-4xl font-bold">{{ this.movie.title }}</h1>
         <span class="text-gray-500">{{ this.movie.vote_average * 10 }}% | {{ this.movie.release_date}} <!--<span :key="index" v-for="(item, index) in movie.genres">{{ item.name }}<span v-if="movie.genres.length - 1 != index">, </span></span>--></span>
         <p class="mt-5">
@@ -30,7 +30,8 @@
         </div>
 
         <div class="mt-8">
-          <a href="#" class="rounded bg-red-700 px-3 py-3 inline-flex">
+          <!-- <a :href="youtubeVideo" class="rounded bg-red-700 px-3 py-3 inline-flex"> --->
+            <a href="#" class="rounded bg-red-700 px-3 py-3 inline-flex">
             <svg
               style="color: white"
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +99,12 @@ export default {
     
     data() {
       return {
-        movie: [],
+        movie: {
+          videos: {
+            results: [
+            ],
+          }
+        }
       }
     },
     mounted() {
@@ -112,7 +118,7 @@ export default {
     methods: {
       async fetchMovie(movieId) {
         const response = await this.axios.get(
-          "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=c6dd21371d5119b5f6b49b5b09c58fff&language=en-US"
+          "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=c6dd21371d5119b5f6b49b5b09c58fff&language=en-US&append_to_response=credits,videos,images"
         );
         console.log(response);
         this.movie = response.data;
@@ -120,10 +126,13 @@ export default {
       addFavorite(movieId) {
         console.log("OUR_DEBUG: " + movieId)
         let favorites = window.localStorage.movies ? window.localStorage.movies.split(",") : [];
-        if (!favorites.includes(movieId.id.toString())) {
+        let indexMovie = favorites.indexOf(movieId.id.toString());
+        if (indexMovie == -1) {
+        //if (!favorites.includes(movieId.id.toString())) {
           favorites.push(movieId.id)
-          window.localStorage.movies = favorites;
+
         }
+        window.localStorage.movies = favorites;
         console.log(favorites);
       },
       removeFavorite(movieId) {
@@ -137,8 +146,9 @@ export default {
           //let movieId = this.movie
           favorites.splice(indexMovie,1);
           //this.setDataFromChild(movieId.id);
-          window.localStorage.movies = favorites;
+
         }
+        window.localStorage.movies = favorites;
         console.log(favorites);
       },
       checkIfFavorite(movieId) {
@@ -155,6 +165,10 @@ export default {
     computed: {
       posterPath() {
         return "https://image.tmdb.org/t/p/w500" + this.movie.poster_path;
+      },
+      youtubeVideo() {
+        console.log(this.movie.videos)
+        return "https://www.youtube.com/ " + this.movie.videos.results[0].key;
       }
     }
 };

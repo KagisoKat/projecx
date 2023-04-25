@@ -2,10 +2,10 @@
     <div class="user-list-page">
       <h2>Favorites</h2>
       <div className="result">
-        <div v-if="movies.length > 0" class="card" v-for="movie in movies" :key="movie.id"> 
+        <!--<div v-if="movies.length > 0" class="card" v-for="movie in movies" :key="movie.id"> -->
          <!--<Movie :movie="movie" :add="false" :setDataFromChild="setDataFromChild"/>-->
          <MovieItem :key="movie.id" v-for="movie in movies" :movie="movie" :setDataFromChild="setDataFromChild" />
-        </div>
+        <!--</div> -->
       </div>
     </div>
   </template>
@@ -37,6 +37,7 @@
       },
       getMovies(){
         let moviesId = window.localStorage.movies ? window.localStorage.movies.split(",") : []
+        console.log(moviesId);
         for (let i = 0; i <= moviesId.length; i++) {
           axios.get(
             `https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=c6dd21371d5119b5f6b49b5b09c58fff&language=en-US`

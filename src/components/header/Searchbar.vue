@@ -13,8 +13,8 @@
     >
       <ul class="mt-3">
         <li :key="index" v-for="(movie, index) in searchResult" class="flex">
-          <img :src="posterPath(movie.poster_path)" alt="" class="w-10 p-1" />
-          <span>{{ movie.title }}</span>
+          <a :href="'/movie/' + movie.id"><img :src="posterPath(movie.poster_path)" alt="" class="w-10 p-1" />
+          <span>{{ movie.title }}</span></a>
         </li>
       </ul>
     </div>
