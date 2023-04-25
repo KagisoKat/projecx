@@ -17,7 +17,7 @@ Users are also able to click on the 'favourite' button which then adds their sel
 link on the navbar. The movies remain displayed even after the user logs out.Users also have the option to remove a movie from their 'profile'.
 
 ##
-Users are able to sign out of the app.
+Users are able to sign out of the app with ease.
 
 
 
